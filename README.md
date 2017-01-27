@@ -10,6 +10,19 @@ docker pull daileyo/docker-oracle-xe-11g
 
 **NOTE:**  This image is based off of [wnameless/oracle-xe-11g](https://github.com/wnameless/docker-oracle-xe-11g), and [sath89/oracle-xe-11g](https://github.com/MaksymBilenko/docker-oracle-xe-11g).  
 
+##How this differs from wnameless
+* Allows for db configuration to be persisted after container stop/restart (*similar to sath89.*)
+* Runs sql scripts as sys sysdba rather than system.
+
+##How this differs from sath89
+* Implements initialization script functionality from wnameless.
+* Does not utilize size optimizations of sath89 project.
+* Does not have additional configuration options from sath89 project.
+* Allows for remote connection configuration.
+* Allows ssh connectivity as implemented by wnameless project.
+* Project structure is essentially identical to wnameless project.
+
+
 
 Run with 22 and 1521 ports opened:
 ```
