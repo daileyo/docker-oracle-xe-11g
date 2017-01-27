@@ -8,7 +8,7 @@ Oracle Express Edition 11g Release 2 on Ubuntu 16.04 LTS
 docker pull daileyo/docker-oracle-xe-11g
 ```
 
-NOTE:  This image is based off of wnameless/oracle-xe-11g, and sath89/oracle-xe-11g.  
+NOTE:  This image is based off of [wnameless/oracle-xe-11g](https://github.com/wnameless/docker-oracle-xe-11g), and [sath89/oracle-xe-11g](https://github.com/MaksymBilenko/docker-oracle-xe-11g).  
 
 
 Run with 22 and 1521 ports opened:
