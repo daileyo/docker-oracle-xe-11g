@@ -21,8 +21,14 @@ fi
 
 for f in /docker-entrypoint-initdb.d/*; do
   case "$f" in
-    *.sh)     echo "$0: running $f"; . "$f" ;;
-    *.sql)    echo "$0: running $f"; echo "exit" | /u01/app/oracle/product/11.2.0/xe/bin/sqlplus "SYSTEM/oracle" @"$f"; echo ;;
+    *.sh)     	echo "$0: running $f"; . "$f" ;;
+    *.sql)	echo "$0: running $f"
+	      	echo "exit" | /u01/app/oracle/product/11.2.0/xe/bin/sqlplus "SYS/oracle as sysdba" @"$f"
+	      	echo
+		echo "Setting to ran."
+		mv -- "$f" "${f%.sql}.sql.ran"
+		echo
+		;;
     *)        echo "$0: ignoring $f" ;;
   esac
   echo
