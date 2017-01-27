@@ -37,6 +37,8 @@ docker pull daileyo/docker-oracle-xe-11g
 * **SSH login user:** root
 * **SSH login password:** admin
 
+
+####How to map container ports to host.
 To run with 22 and 1521 ports opened, expose the ports to the host with docker run's -p command. 
 
 Example:
@@ -45,6 +47,29 @@ docker run -d -p 49160:22 -p 49161:1521 daileyo/oracle-xe-11g
 ```
 The above example maps container port 22 to host port 49160, and container port 1521 to 49161.
 
+
+To use database initialization, a volume must be configured on the host.
+
+**Docker Example:**
+```
+docker run -d -v /opt/scripts:/docker-initializedb.d daileyo/oracle-xe-11g
+```
+
+**Docker for Windows Example:**
+```
+docker run -d -v C:\opt\scripts:/docker-initializedb.d daileyo/oracle-xe-11g
+```
+**Docker Toolbox Example:**
+```
+docker run -d /c/Users/Public/scripts:/docker-initializedb.d daileyo/oracle-xe-11g
+```
+For the above example to work, script files must be placed in the Public user directory.  It is also possible to put it in other directories, but they must first be exposed to the docker-engine virtual machine first.
+
+
+
+
+
+###How to use SSH with container
 
 Login by SSH
 ```
