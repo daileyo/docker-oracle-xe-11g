@@ -65,6 +65,8 @@ docker run -d /c/Users/Public/scripts:/docker-initializedb.d daileyo/oracle-xe-1
 ```
 For the above example to work, script files must be placed in the Public user directory.  It is also possible to put it in other directories, but they must first be exposed to the docker-engine virtual machine first.
 
+All three of the above examples expose a host directory to the container.  Any bash or sql scripts in the directory will be ran, and then have .ran appened to the file.
+
 
 
 
