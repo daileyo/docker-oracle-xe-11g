@@ -25,28 +25,24 @@ docker pull daileyo/docker-oracle-xe-11g
 ##Project information
 
 ###Environment Variables and exposed ports
-* ORACLE_ALLOW_REMOTE
-* SSH default port: 22
-* Oracale default connect port: 1521
-* Users available by default:
+* **ORACLE_ALLOW_REMOTE**
+* **SSH default port:** 22
+* **Oracale default connect port:** 1521
+* **Users available by default:**
   * SYS
   * SYSTEM
-* Password(s) for users: oracle
-
-
+* **Password(s) for users:** oracle
+* **SSH login user:** root
+* **SSH login password:** admin
 
 To run with 22 and 1521 ports opened, expose the ports to the host with docker run's -p command. 
+
 Example:
 ```
 docker run -d -p 49160:22 -p 49161:1521 daileyo/oracle-xe-11g
 ```
+The above example maps container port 22 to host port 49160, and container port 1521 to 49161.
 
-
-
-Password for SYS & SYSTEM
-```
-oracle
-```
 
 Login by SSH
 ```
