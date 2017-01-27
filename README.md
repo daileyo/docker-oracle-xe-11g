@@ -22,6 +22,13 @@ docker pull daileyo/docker-oracle-xe-11g
 * Allows ssh connectivity as implemented by wnameless project.
 * Project structure is essentially identical to wnameless project.
 
+##Project information
+
+###Environment Variables and exposed ports
+* ORACLE_ALLOW_REMOTE
+* SSH default port: 22
+* Oracale default connect port: 1521
+
 
 
 Run with 22 and 1521 ports opened:
